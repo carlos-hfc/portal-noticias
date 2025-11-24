@@ -2,6 +2,8 @@ section {
   header {
     border-top: 1px solid var(--stroke-color);
     padding-block: 12px 24px;
+    color: var(--text-color-secondary);
+    font: var(--text-span);
 
     a {
       justify-self: end;
@@ -12,7 +14,7 @@ section {
         color: var(--text-color-secondary);
         font: var(--text-span);
       }
-      
+
       span {
         background-image: url(../assets/icons/ArrowRight.svg);
         width: 16px;
@@ -115,7 +117,7 @@ aside {
 
 #more {
   margin-top: 32px;
-  
+
   img {
     width: 72px;
     height: 72px;
