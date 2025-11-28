@@ -1,4 +1,6 @@
 section {
+  padding-bottom: 2.5rem;
+
   header {
     border-top: 1px solid var(--stroke-color);
     padding-block: 12px 24px;
@@ -6,9 +8,11 @@ section {
     font: var(--text-span);
 
     a {
-      justify-self: end;
       align-items: center;
       gap: 8px;
+      grid-auto-flow: column;
+      justify-self: end;
+      width: fit-content;
 
       strong {
         color: var(--text-color-secondary);
@@ -46,6 +50,10 @@ section {
     overflow: hidden;
     border-radius: 4px;
 
+    &:first-child {
+      height: 328px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -65,6 +73,11 @@ section {
 
       h2 {
         margin-top: 8px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
       }
     }
   }
@@ -72,14 +85,6 @@ section {
 
 #weekly {
   grid-area: weekly;
-
-  img {
-    height: 160px;
-  }
-
-  & > div {
-    grid-template-columns: repeat(4, 292px);
-  }
 
   figure {
     position: relative;
@@ -101,13 +106,30 @@ section {
   grid-area: ai;
 
   img {
-    width: 176px;
-    height: 176px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
+  }
+
+  div:last-child {
+    order: -1;
   }
 
   h3 {
     margin-block: 8px 4px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
   }
 }
 
@@ -126,5 +148,45 @@ aside {
 
   h3 {
     margin-top: 8px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  section {
+    padding-bottom: 5rem;
+  }
+
+  #featured {
+    grid-auto-flow: column;
+
+    & > div {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card:first-child {
+      height: 100%;
+    }
+  }
+
+  #weekly {
+    & > div {
+      grid-template-columns: repeat(4, 292px);
+    }
+
+    img {
+      height: 160px;
+    }
+  }
+
+  #ai {
+    img {
+      width: 176px;
+      height: 176px;
+    }
   }
 }
